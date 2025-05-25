@@ -14,7 +14,7 @@ The dashboard and orders pages are protected and only accessible to authenticate
 
 ## Live Demo
 
-- **Live App:** [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+- **Live App:** [https://pizza-dashboard-vql5.vercel.app/](https://your-vercel-url.vercel.app)
 - **GitHub Repo:** [https://github.com/Ansh13579/Pizza-Dashboard](https://github.com/yourusername/pizza-dashboard)
 
 ---
@@ -69,7 +69,7 @@ This app is ready for Vercel:
 2. **Import the repository in Vercel** ([vercel.com](https://vercel.com/)).
 3. **Add your environment variables** in the Vercel dashboard (same as `.env.local`).
 4. **Deploy!**
-5. After deployment, your app will be live at `https://your-vercel-url.vercel.app`.
+5. After deployment, your app will be live at `https://pizza-dashboard-vql5.vercel.app/`.
 
 ---
 
@@ -121,7 +121,7 @@ This app is ready for Vercel:
 ## Submission
 
 - **Public GitHub Repo:** [https://github.com/Ansh13579/Pizza-Dashboard](https://github.com/yourusername/pizza-dashboard)
-- **Live Vercel App:** [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+- **Live Vercel App:** [https://pizza-dashboard-vql5.vercel.app/](https://your-vercel-url.vercel.app)
 
 ---
 

@@ -14,8 +14,13 @@ The dashboard and orders pages are protected and only accessible to authenticate
 
 ## Live Demo
 
+<<<<<<< HEAD
 - **Live App:** [https://pizza-dashboard-vql5.vercel.app/](https://your-vercel-url.vercel.app)
 - **GitHub Repo:** [https://github.com/Ansh13579/Pizza-Dashboard](https://github.com/yourusername/pizza-dashboard)
+=======
+- **Live App:** [//pizza-dashboard-vql5.vercel.app/]
+- **GitHub Repo:** [//github.com/Ansh13579/Pizza-Dashboard]
+>>>>>>> 2b8967427d3504ba0bc79bce7bafa97d966beb5c
 
 ---
 

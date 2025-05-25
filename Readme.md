@@ -1,6 +1,6 @@
 # Pizza Dashboard
 
-**Author:** [Ansh Kumar Singh]
+**Author:** Ansh Kumar Singh
 
 ---
 
@@ -14,13 +14,8 @@ The dashboard and orders pages are protected and only accessible to authenticate
 
 ## Live Demo
 
-<<<<<<< HEAD
-- **Live App:** [https://pizza-dashboard-vql5.vercel.app/](https://your-vercel-url.vercel.app)
-- **GitHub Repo:** [https://github.com/Ansh13579/Pizza-Dashboard](https://github.com/yourusername/pizza-dashboard)
-=======
-- **Live App:** [//pizza-dashboard-vql5.vercel.app/]
-- **GitHub Repo:** [//github.com/Ansh13579/Pizza-Dashboard]
->>>>>>> 2b8967427d3504ba0bc79bce7bafa97d966beb5c
+- **Live App:** [https://pizza-dashboard-vql5.vercel.app/](https://pizza-dashboard-vql5.vercel.app/)
+- **GitHub Repo:** [https://github.com/Ansh13579/Pizza-Dashboard](https://github.com/Ansh13579/Pizza-Dashboard)
 
 ---
 
@@ -40,7 +35,7 @@ The dashboard and orders pages are protected and only accessible to authenticate
 ## Getting Started
 
 ### 1. Clone the repository
-git clone https://github.com/Ansh13579/Pizza-Dashboard
+git clone https://github.com/Ansh13579/Pizza-Dashboard.git
 
 
 ### 2. Install dependencies
@@ -48,6 +43,7 @@ npm install
 
 
 ### 3. Configure environment variables
+
 Create a `.env.local` file in the root directory with the following:
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
@@ -55,12 +51,13 @@ NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your_nextauth_secret
 
 
-- **Do NOT commit this file to GitHub.**  
-- Obtain Google credentials from [Google Cloud Console](https://console.cloud.google.com/).  
+- **Do NOT commit this file to GitHub.**
+- Obtain Google credentials from [Google Cloud Console](https://console.cloud.google.com/).
 - Generate `NEXTAUTH_SECRET` with `openssl rand -base64 32` or use an online generator.
 
 ### 4. Run locally
 npm run dev
+
 
 Visit [http://localhost:3000](http://localhost:3000).
 
@@ -74,7 +71,7 @@ This app is ready for Vercel:
 2. **Import the repository in Vercel** ([vercel.com](https://vercel.com/)).
 3. **Add your environment variables** in the Vercel dashboard (same as `.env.local`).
 4. **Deploy!**
-5. After deployment, your app will be live at `https://pizza-dashboard-vql5.vercel.app/`.
+5. After deployment, your app will be live at [https://pizza-dashboard-vql5.vercel.app/](https://pizza-dashboard-vql5.vercel.app/).
 
 ---
 
@@ -82,11 +79,8 @@ This app is ready for Vercel:
 
 - The project uses Git for version control.
 - The commit history is clean and meaningful, reflecting the development process.
-- The repository is publicly available at [https://github.com/yourusername/pizza-dashboard](https://github.com/yourusername/pizza-dashboard).
-- **.env.local** and other secrets are excluded via `.gitignore`.
-
----
-
+- The repository is publicly available at [https://github.com/Ansh13579/Pizza-Dashboard](https://github.com/Ansh13579/Pizza-Dashboard).
+- `.env.local` and other secrets are excluded via `.gitignore`.
 
 ---
 
@@ -98,6 +92,7 @@ This app is ready for Vercel:
 - Focused on clean UI, responsive design, and user experience.
 - Loading and error states are handled for authentication.
 - Toast notifications provide user feedback for login/logout and errors.
+- **Challenge:** Ensuring seamless Google OAuth flow and protected routing in both development and production environments.
 
 ---
 
@@ -106,7 +101,6 @@ This app is ready for Vercel:
 - [NextAuth.js](https://next-auth.js.org/) (Google OAuth authentication)
 - [Tailwind CSS](https://tailwindcss.com/) (styling)
 - [react-hot-toast](https://react-hot-toast.com/) (toast notifications)
-- [date-fns](https://date-fns.org/) (date formatting, if used)
 - (Add any others you used beyond Next.js, NextAuth.js, and Tailwind CSS)
 
 ---
@@ -118,21 +112,17 @@ This app is ready for Vercel:
 3. Go to **APIs & Services > Credentials**.
 4. Click **Create Credentials > OAuth client ID**.
 5. Set **Authorized JavaScript origins** to `http://localhost:3000` (and your Vercel URL for production).
-6. Set **Authorized redirect URIs** to `http://localhost:3000/api/auth/callback/google` (and your Vercel URL for production).
+6. Set **Authorized redirect URIs** to `http://localhost:3000/api/auth/callback/google` (and your Vercel URL for production: `https://pizza-dashboard-vql5.vercel.app/api/auth/callback/google`).
 7. Copy your **Client ID** and **Client Secret** to your `.env.local` (do NOT commit this file).
 
 ---
 
 ## Submission
 
-- **Public GitHub Repo:** [https://github.com/Ansh13579/Pizza-Dashboard](https://github.com/yourusername/pizza-dashboard)
-- **Live Vercel App:** [https://pizza-dashboard-vql5.vercel.app/](https://your-vercel-url.vercel.app)
+- **Public GitHub Repo:** [https://github.com/Ansh13579/Pizza-Dashboard](https://github.com/Ansh13579/Pizza-Dashboard)
+- **Live Vercel App:** [https://pizza-dashboard-vql5.vercel.app/](https://pizza-dashboard-vql5.vercel.app/)
 
 ---
-
-
-
-
 
 
 

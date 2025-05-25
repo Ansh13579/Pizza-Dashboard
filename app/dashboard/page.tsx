@@ -2,53 +2,90 @@
 
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { pizzaOrders } from "@/lib/data";
+
+// Map each status to its display info
+const STATUS_INFO = {
+  Delivered: {
+    icon: "✅",
+    color: "from-green-500 to-green-600",
+    bgColor: "bg-green-50",
+    textColor: "text-green-600",
+    change: "+8%",
+    changeType: "increase",
+  },
+  Pending: {
+    icon: "⏳",
+    color: "from-yellow-500 to-yellow-600",
+    bgColor: "bg-yellow-50",
+    textColor: "text-yellow-600",
+    change: "-5%",
+    changeType: "decrease",
+  },
+  "Out for Delivery": {
+    icon: "🚚",
+    color: "from-purple-500 to-purple-600",
+    bgColor: "bg-purple-50",
+    textColor: "text-purple-600",
+    change: "+3%",
+    changeType: "increase",
+  },
+  Preparing: {
+    icon: "👨‍🍳",
+    color: "from-blue-500 to-blue-600",
+    bgColor: "bg-blue-50",
+    textColor: "text-blue-600",
+    change: "+2%",
+    changeType: "increase",
+  },
+  Cancelled: {
+    icon: "❌",
+    color: "from-red-500 to-red-600",
+    bgColor: "bg-red-50",
+    textColor: "text-red-600",
+    change: "-10%",
+    changeType: "decrease",
+  },
+};
 
 export default function DashboardPage() {
   const { data: session } = useSession();
-  
+
+  // Calculate status counts dynamically
+  const statusCounts: Record<string, number> = {};
+  pizzaOrders.forEach(order => {
+    statusCounts[order.status] = (statusCounts[order.status] || 0) + 1;
+  });
+
+  const totalOrders = pizzaOrders.length;
+
+  // Build stats array: Today's Orders + all statuses in your data
   const stats = [
-    {
-      title: "Today's Orders",
-      value: "5",
-      icon: "📊",
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      textColor: "text-blue-600",
-      change: "+12%",
-      changeType: "increase"
-    },
-    {
-      title: "Delivered",
-      value: "3",
-      icon: "✅",
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50",
-      textColor: "text-green-600",
-      change: "+8%",
-      changeType: "increase"
-    },
-    {
-      title: "Pending",
-      value: "2",
-      icon: "⏳",
-      color: "from-yellow-500 to-yellow-600",
-      bgColor: "bg-yellow-50",
-      textColor: "text-yellow-600",
-      change: "-5%",
-      changeType: "decrease"
-    },
-    {
-      title: "Out for Delivery",
-      value: "1",
-      icon: "🚚",
-      color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50",
-      textColor: "text-purple-600",
-      change: "+3%",
-      changeType: "increase"
-    },
-  ];
-  
+  {
+    title: "Today's Orders",
+    value: totalOrders,
+    icon: "📊",
+    color: "from-blue-500 to-blue-600",
+    bgColor: "bg-blue-50",
+    textColor: "text-blue-600",
+    change: "+12%",
+    changeType: "increase",
+  },
+  ...Object.entries(statusCounts).map(([status, value]) => ({
+    title: status,
+    value,
+    ...(STATUS_INFO[status as keyof typeof STATUS_INFO] || {
+      icon: "❓",
+      color: "from-gray-500 to-gray-600",
+      bgColor: "bg-gray-50",
+      textColor: "text-gray-600",
+      change: "0%",
+      changeType: "neutral",
+    }),
+  })),
+];
+
+
   return (
     <div className="space-y-8">
       {/* Welcome Section */}
@@ -73,7 +110,7 @@ export default function DashboardPage() {
       </div>
       
       {/* Statistics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${stats.length} gap-6`}>
         {stats.map((stat, index) => (
           <div
             key={stat.title}
@@ -84,9 +121,11 @@ export default function DashboardPage() {
                 <span className="text-2xl">{stat.icon}</span>
               </div>
               <div className={`text-sm px-2 py-1 rounded-full ${
-                stat.changeType === 'increase' 
-                  ? 'bg-green-100 text-green-600' 
-                  : 'bg-red-100 text-red-600'
+                stat.changeType === 'increase'
+                  ? 'bg-green-100 text-green-600'
+                  : stat.changeType === 'decrease'
+                  ? 'bg-red-100 text-red-600'
+                  : 'bg-gray-100 text-gray-600'
               }`}>
                 {stat.change}
               </div>
